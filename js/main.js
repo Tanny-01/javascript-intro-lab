@@ -33,3 +33,27 @@ let resetBtn = document.querySelector(".reset");
 resetBtn.addEventListener("click", function () {
    document.body.removeAttribute("class");
 })
+
+
+//image rotator
+let imageAr = [
+   'images/view1.jpg',
+   'images/view2.jpg',
+   'images/view3.jpg',
+   'images/view4.jpg',
+   'images/view5.jpg',
+   'images/view6.jpg'
+ ];
+ let imageRotator = document.getElementById("myImages");
+ let imageCounter = 0;
+ function chgImage() { 
+   if(imageCounter === 6){
+      imageCounter = 0;
+   }
+
+   imageRotator.setAttribute("src", imageAr[imageCounter]);
+   imageCounter++;
+   console.info(imageCounter);
+ }
+ setInterval(chgImage, 1000
+ );
